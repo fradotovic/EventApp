@@ -16,6 +16,9 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
 });
 
 
+builder.Services.AddCors();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -27,6 +30,9 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().
+WithOrigins("http://localhost:3000","https://localhost:3000"));
 
 app.MapControllers();
 
@@ -51,7 +57,5 @@ catch (Exception ex )
 
 	throw;
 }
-
-
 
 app.Run();

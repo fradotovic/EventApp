@@ -11,4 +11,5 @@
 ## 6. Zatim je potrebno publishati granu
 
 
+## 7. Kreiraj repozitorij na Githubu
 
